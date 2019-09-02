@@ -5,12 +5,23 @@ import { isFunction } from "../../lib/object";
 import { Responsive, WidthProvider } from "react-grid-layout";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
+import store from "../../redux/store";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 class PokeList extends Component {
   constructor(props) {
     super(props);
+    let storeValue = store.getState();
+
+    let pokemons = safeDeepGetWithType(
+      storeValue,
+      ["owned_pokemon", "list"],
+      {}
+    );
+    this.state = {
+      pokemons
+    };
     this.onPokemonSelect = this.onPokemonSelect.bind(this);
   }
 
@@ -21,6 +32,7 @@ class PokeList extends Component {
     }
   }
   render() {
+    let pokemons = safeDeepGetWithType(this, ["state", "pokemons"], {});
     let listPokemon = safeDeepGetWithType(this, ["props", "listPokemon"], []);
     let contentWidth = safeDeepGetWithType(
       this,
@@ -50,6 +62,15 @@ class PokeList extends Component {
       let pokemon = listPokemon[i];
       let MON_NUM = pokemon.url.split("/")[MON_INDEX_KEY];
 
+      let size = safeDeepGetWithType(pokemons, [pokemon.name, "size"], 0);
+
+      let notShowOwned = size === 0 ? true : false;
+
+      let height = 100;
+      if (!notShowOwned) {
+        height = 50;
+      }
+
       let x = counterX;
       let y = counterY;
 
@@ -66,12 +87,28 @@ class PokeList extends Component {
           className="card pokeList"
           data-grid={{ x, y, w, h, isResizable: false, isDraggable: false }}
         >
-          <div onClick={() => _this.onPokemonSelect(pokemon)}>
+          <div
+            className="row"
+            style={{ margin: 0 }}
+            onClick={() => _this.onPokemonSelect(pokemon)}
+          >
             <span className="image">
               <img alt={pokemon.name} src={SPRITE_STR + MON_NUM + ".png"} />
             </span>
-            <span className="selectionName">
-              {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+            <span>
+              <div className="centeringItemVertical" style={{ height }}>
+                <span className="selectionName">
+                  {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+                </span>
+              </div>
+              {notShowOwned ? null : (
+                <div
+                  className="centeringItemVertical"
+                  style={{ height, fontSize: 11, fontStyle: "italic" }}
+                >
+                  <span>Owned : {size}</span>
+                </div>
+              )}
             </span>
           </div>
         </div>

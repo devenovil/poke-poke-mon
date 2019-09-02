@@ -86,6 +86,7 @@ class PokeOwned extends Component {
 
     if (size > 1) {
       size -= 1;
+      listPoke[pokeName].size = size;
     } else {
       delete listPoke[pokeName];
     }
