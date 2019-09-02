@@ -1,0 +1,41 @@
+.main {
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.selectCard {
+  cursor: pointer;
+}
+
+.party {
+  color: #ffa6b2;
+  text-align: center;
+  font-family: Montserrat;
+}
+
+.selection {
+  color: #b2ffa6;
+  text-align: center;
+  font-family: Montserrat;
+}
+
+.partyName {
+  color: #a6beff;
+  text-align: center;
+}
+
+.selectionName {
+  color: #313131;
+  text-align: center;
+}
+
+.pokeList:hover {
+  border: 2px solid #3a5ca8;
+  cursor: pointer;
+}
+
+.pokeList:hover .selectionName {
+  color: #3a5ca8;
+  font-weight: bold;
+}

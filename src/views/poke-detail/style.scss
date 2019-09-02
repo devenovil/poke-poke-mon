@@ -1,0 +1,213 @@
+.pokepoke-popup-content {
+  width: 80%;
+  margin: 0 auto;
+}
+.pokepoke-popup-header {
+  text-align: left;
+  font-size: 36px;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid #fff;
+}
+.pokepoke-popup-block {
+  width: 100%;
+}
+.pokepoke-popup-header-type-wrapper {
+  float: right;
+}
+.pokepoke-popup-block-header {
+  font-size: 24px;
+  color: #fff;
+  text-align: left;
+  padding-bottom: 10px;
+  margin: 20px 0 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.type-label {
+  display: inline-block;
+  padding: 10px;
+  background: #999;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.normal {
+  background: #999;
+}
+.flying {
+  background: #9aabf5; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(
+    #9aabf5,
+    #914833
+  ); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#9aabf5, #914833); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(
+    #9aabf5,
+    #914833
+  ); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#9aabf5, #914833); /* Standard syntax */
+}
+.fighting {
+  background: #914833;
+}
+.poison {
+  background: #601f62;
+}
+.ground {
+  background: #ddc276;
+}
+.rock {
+  background: #9d863d;
+}
+.bug {
+  background: #8c9a10;
+}
+.ghost {
+  background: #464694;
+}
+.steel {
+  background: #b6b6c4;
+}
+.fire {
+  background: #c82200;
+}
+.water {
+  background: #156ec7;
+}
+.grass {
+  background: #379901;
+}
+.electric {
+  background: #fab917;
+}
+.psychic {
+  background: #eb447e;
+}
+.ice {
+  background: #9ce4fc;
+}
+.dragon {
+  background: #745ddd;
+}
+.dark {
+  background: #3d2e24;
+}
+.fairy {
+  background: #f0a9f0;
+}
+.unknown {
+  background: #777;
+}
+.shadow {
+  background: #333;
+}
+.pokepoke-detail-img {
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+  border: 4px solid #3a5ca8;
+  border-radius: 10px;
+  background-size: contain;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (min-width: 800px) {
+  .pokepoke-detail-img {
+    max-width: 20%;
+  }
+}
+.pokepoke-moves-container {
+  text-align: left;
+}
+.pokepoke-moves-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  color: #fff;
+  font-size: 17px;
+  margin: 5px 0;
+}
+.pokepoke-stats-wrapper {
+  // background: linear-gradient(to right bottom, #3a5ca8, #ffcb05);
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  padding: 0px 20px;
+}
+.pokepoke-percent-bar {
+  display: block;
+  height: 30px;
+  position: relative;
+  color: #fff;
+  margin: 10px 0;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.percent-bar {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  bottom: 0;
+  box-sizing: border-box;
+  left: 0;
+  background: #999;
+  -webkit-transform: skewX(45deg);
+  -ms-transform: skewX(45deg);
+  transform: skewX(45deg);
+}
+.percent-bar-filler {
+  position: relative;
+  width: 0;
+  height: 100%;
+  background: #ff851b;
+  -webkit-animation: percent-bar 1s;
+  -moz-animation: percent-bar 1s;
+  animation: percent-bar 1s;
+}
+.percent-bar-filler.right {
+  position: absolute;
+  width: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: #ff851b;
+}
+.hp .percent-bar-filler {
+  background: #f44336;
+}
+.attack .percent-bar-filler {
+  background: #e91e63;
+}
+.defense .percent-bar-filler {
+  background: #3f51b5;
+}
+.special-attack .percent-bar-filler {
+  background: #ff5722;
+}
+.special-defense .percent-bar-filler {
+  background: #9c27b0;
+}
+.speed .percent-bar-filler {
+  background: #2196f3;
+}
+.percent-bar-title,
+.percent-bar-value {
+  position: absolute;
+  top: 50%;
+  margin-top: -14px;
+  font-size: 18px;
+  z-index: 2;
+}
+.percent-bar-title {
+  left: 20px;
+}
+.percent-bar-value {
+  right: 20px;
+}

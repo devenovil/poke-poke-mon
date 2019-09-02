@@ -1,0 +1,10 @@
+.react-confirm-alert {
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 425px) {
+  .react-confirm-alert-body {
+    max-width: 250px;
+  }
+}
